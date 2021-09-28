@@ -1,1 +1,83 @@
-<p>employee-details works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-2 mt-2">
+      <div class="card-header">
+        New department
+      </div>
+      <div class="card-body">
+        <div class="row mt-2">
+          <div class="col-6">
+            id
+          </div>
+          <div class="col-6">
+            {{ employee?.id }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            Email
+          </div>
+          <div class="col-6">
+            {{ employee?.email }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            FirstName
+          </div>
+          <div class="col-6">
+            {{ employee?.firstName }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            LastName
+          </div>
+          <div class="col-6">
+            {{ employee?.lastName }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            Age
+          </div>
+          <div class="col-6">
+            {{ employee?.age }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            BirthDay
+          </div>
+          <div class="col-6">
+            {{ employee?.birthDay | date: dateFormat }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            created
+          </div>
+          <div class="col-6">
+            {{ employee?.created | date: dateFormat }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            updated
+          </div>
+          <div class="col-6">
+            {{ employee?.updated | date: dateFormat }}
+          </div>
+        </div>
+<!--        <div class="row mt-2">-->
+<!--          <div class="col-6">-->
+<!--            show all employees-->
+<!--          </div>-->
+<!--          <div class="col-6">-->
+<!--            <button type="button" class="btn btn-primary btn-sm" (click)="showAllEmployees()"><i class="fa fa-address-book-o" aria-hidden="true"></i></button>-->
+<!--          </div>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </div>
+</div>

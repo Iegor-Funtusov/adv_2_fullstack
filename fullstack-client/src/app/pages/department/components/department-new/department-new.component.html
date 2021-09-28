@@ -1,1 +1,25 @@
-<p>department-new works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-2 mt-2">
+      <div class="card-header">
+        New department
+      </div>
+      <div class="card-body">
+        <form [formGroup]="departmentForm" (ngSubmit)="create()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" aria-describedby="name" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="departmentType">Department type</label>
+            <select id="departmentType" class="form-select" formControlName="departmentType">
+              <option [ngValue]="null">Select one...</option>
+              <option *ngFor="let type of departmentTypeItems | keyvalue" [ngValue]="type.key">{{ type.value }}</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -44,12 +44,10 @@ public class EmployeeController {
     }
 
     @GetMapping
-    public ResponseEntity<DataContainer<List<EmployeeResponseDto>>> findAll() {
+    public ResponseEntity<DataContainer<List<EmployeeResponseDto>>> findAll(@RequestParam(required = false) Long departmentId) {
+        if (departmentId != null) {
+            return ResponseEntity.ok(new DataContainer<>(employeeFacade.findAllByDepartment(departmentId)));
+        }
         return ResponseEntity.ok(new DataContainer<>(employeeFacade.findAll()));
-    }
-
-    @GetMapping("/department/{id}")
-    public ResponseEntity<DataContainer<List<EmployeeResponseDto>>> findAllByDepartment(@PathVariable Long id) {
-        return ResponseEntity.ok(new DataContainer<>(employeeFacade.findAllByDepartment(id)));
     }
 }

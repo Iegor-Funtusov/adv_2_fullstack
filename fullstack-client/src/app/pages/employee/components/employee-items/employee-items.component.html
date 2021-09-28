@@ -1,1 +1,33 @@
-<p>employee-items works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-2 mt-2">
+      <div class="card-header">
+        Employees by department {{ department?.name }}
+      </div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>email</th>
+            <th>age</th>
+            <th>birthDay</th>
+            <th>details</th>
+            <th>delete</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee.fullName }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.age }}</td>
+            <td>{{ employee.birthDay | date: dateFormat }}</td>
+            <td><button type="button" class="btn btn-primary" (click)="loadById(employee.id)">details</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteById(employee.id)">delete</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

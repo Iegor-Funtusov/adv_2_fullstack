@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DepartmentDetailsComponent, DepartmentItemsComponent, DepartmentNewComponent } from "./components";
-import { DepartmentRoutingModule } from "./department-routing.module";
+import { DepartmentDetailsComponent, DepartmentItemsComponent, DepartmentNewComponent } from './components';
+import { DepartmentRoutingModule } from './department-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,9 @@ import { DepartmentRoutingModule } from "./department-routing.module";
   ],
   imports: [
     CommonModule,
-    DepartmentRoutingModule
+    DepartmentRoutingModule,
+    ReactiveFormsModule
   ]
 })
-export class DepartmentModule { }
+export class DepartmentModule {
+}

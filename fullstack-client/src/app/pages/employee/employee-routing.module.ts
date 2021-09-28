@@ -9,12 +9,12 @@ const routes: Routes = [
     component: EmployeeItemsComponent
   },
   {
-    path: ':id',
-    component: EmployeeDetailsComponent
-  },
-  {
     path: 'new',
     component: EmployeeNewComponent
+  },
+  {
+    path: ':id',
+    component: EmployeeDetailsComponent
   }
 ];
 

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { DepartmentApiService } from '../../../../service';
+import { DepartmentType } from '../../../../model';
 
 @Component({
   selector: 'app-department-new',
@@ -7,9 +12,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartmentNewComponent implements OnInit {
 
-  constructor() { }
+  departmentForm = new FormGroup({
+    name: new FormControl(''),
+    departmentType: new FormControl()
+  });
+  departmentTypeItems = DepartmentType;
 
-  ngOnInit(): void {
+  constructor(private _departmentApiService: DepartmentApiService, private _router: Router, private _route: ActivatedRoute) { }
+
+  ngOnInit(): void { }
+
+  create(): void {
+    this._departmentApiService.create(this.departmentForm.value).subscribe(() => {
+      this._router.navigate(['/'], { relativeTo: this._route });
+    });
   }
-
 }

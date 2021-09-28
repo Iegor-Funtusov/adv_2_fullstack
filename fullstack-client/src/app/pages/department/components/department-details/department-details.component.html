@@ -1,1 +1,67 @@
-<p>department-details works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-2 mt-2">
+      <div class="card-header">
+        New department
+      </div>
+      <div class="card-body">
+        <div class="row mt-2">
+          <div class="col-6">
+            id
+          </div>
+          <div class="col-6">
+            {{ department?.id }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            name
+          </div>
+          <div class="col-6">
+            {{ department?.name }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            department type
+          </div>
+          <div class="col-6">
+            {{ department?.departmentType }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            created
+          </div>
+          <div class="col-6">
+            {{ department?.created | date: dateFormat }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            updated
+          </div>
+          <div class="col-6">
+            {{ department?.updated | date: dateFormat }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            show all employees
+          </div>
+          <div class="col-6">
+            <button type="button" class="btn btn-primary btn-sm" (click)="showAllEmployees()"><i class="fa fa-address-book-o" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-6">
+            add new employees
+          </div>
+          <div class="col-6">
+            <button type="button" class="btn btn-primary btn-sm" (click)="addNewEmployees()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

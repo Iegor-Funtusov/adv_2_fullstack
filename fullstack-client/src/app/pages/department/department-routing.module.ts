@@ -1,7 +1,7 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { CommonModule } from "@angular/common";
-import { DepartmentDetailsComponent, DepartmentItemsComponent, DepartmentNewComponent } from "./components";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { DepartmentDetailsComponent, DepartmentItemsComponent, DepartmentNewComponent } from './components';
 
 const routes: Routes = [
   {
@@ -9,12 +9,12 @@ const routes: Routes = [
     component: DepartmentItemsComponent
   },
   {
-    path: ':id',
-    component: DepartmentDetailsComponent
-  },
-  {
     path: 'new',
     component: DepartmentNewComponent
+  },
+  {
+    path: ':id',
+    component: DepartmentDetailsComponent
   }
 ];
 
