@@ -3,20 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>ua.com.alevel</groupId>
+        <artifactId>fullstack</artifactId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>ua.com.alevel</groupId>
     <artifactId>fullstack-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>fullstack-server</name>
     <description>fullstack-server</description>
 
     <properties>
-        <java.version>16</java.version>
         <swagger.version>2.9.2</swagger.version>
         <swagger.annotations.version>1.5.21</swagger.annotations.version>
         <swagger.models.version>1.5.21</swagger.models.version>
@@ -85,6 +81,32 @@
 
     <build>
         <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.parent.basedir}/fullstack-client/dist/fullstack-client/</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
